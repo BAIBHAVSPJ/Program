@@ -12,7 +12,7 @@ public class A {
 	public static void main(String[] args) {
 		List<Integer> list =new ArrayList<>(Arrays.asList(1,10,1,2,2,3,10,3,3,4,5,5));
 		System.out.println(list);
-		List<Integer> rm = list.stream().distinct().sorted().collect(Collectors.toList());
+		List<Integer> rm = list.stream().distinct().sorted(Collections.reverseOrder()).collect(Collectors.toList());
 		System.out.println(rm);
 		
 		Set<Integer> setwithoutDuplicates = list.stream().collect(Collectors.toSet());
@@ -23,7 +23,7 @@ public class A {
 		
 		
 		System.out.println("reverse order");
-		list.stream().sorted(Collections.reverseOrder()).forEach(System.out::println);
+		list.stream().distinct().sorted(Collections.reverseOrder()).forEach(System.out::println);
 	
 		
 	}
